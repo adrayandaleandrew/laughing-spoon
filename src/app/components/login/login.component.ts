@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [
+  
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  onButtonClick() {
-    console.log("Button was clicked");
+  value = '';
+
+  onButtonClick() {   
+    console.log(`The value is ${this.value}`);
    }
 
 }
