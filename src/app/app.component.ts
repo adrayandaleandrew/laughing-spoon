@@ -1,17 +1,17 @@
 import { Component, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,LoginComponent],
+  imports: [RouterOutlet, HeaderComponent],
   template: `
    <app-header />  
     <h1>Welcome to {{title()}}!</h1>
-    <app-login />
-    <router-outlet />
+    <main>
+      <router-outlet />
+    </main>
   `,
   
   styles: [],
