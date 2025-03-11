@@ -1,0 +1,13 @@
+<section>
+    <form (submit)="onSubmit($event)">
+        <h1><label for="inputWeight">Enter weight to convert</label></h1>
+        <input name="inputWeight"  [(ngModel)]="inputWeight"  placeholder="Enter weight in kg" >
+
+        <div>
+            <button type="submit">Send</button>
+            
+        </div>
+    </form>
+
+    <p>This is converted weight: {{ newWeight }}</p>
+</section>

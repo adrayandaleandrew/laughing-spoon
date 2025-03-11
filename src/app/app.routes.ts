@@ -14,4 +14,10 @@ export const routes: Routes = [
             return import('./login/login.component').then((m) => m.LoginComponent);
         },
     },
+    {
+        path: 'weightconverter',
+        loadComponent: () => {
+            return import('./weightconverter/weightconverter.component').then((m) => m.WeightconverterComponent);
+        },
+    },
 ];
