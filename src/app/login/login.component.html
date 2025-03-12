@@ -8,45 +8,50 @@
 <div class="login-container">
     
     <!-- Login -->
-    <!-- <form >
-        <h2>Login</h2>
-        
-        <div class="form-group">
-            <input type="email" formControlName="email" placeholder="Email" />
-        </div>
+    @if(isLogin){
+        <form (submit)="onSubmit($event)" >
+            <h2>Login</h2>
+            
+            <div class="form-group">
+                
+                <input type="text" placeholder="Username" [(ngModel)]="userName" name="userName" /> 
+            </div>
+    
+            <div class="form-group">
+                <input type="password" placeholder="Password" [(ngModel)]="userPassword" name="userPassword" />
+            </div>
+            <button type="submit">Login</button>
+            <p>Don't have an account?
+                <span class="highlighted" (click)="openLogin($event)" >Register</span>
+            </p>
+    
+        </form>
+    } @else {
+       <!--  Register -->    
+        <form (submit)="onSubmit($event)" >
+            <h2>Register</h2>
+            
+            <div class="form-group">
+                <input type="text"  placeholder="Username" [(ngModel)]="userName" name="userName"/>
+            </div>
 
-        <div class="form-group">
-            <input type="password" formContoller="password" placeholder="Password" />
-        </div>
-        <button type="submit">Login</button>
-        <p>Don't have an account?
-            <span class="highlighted">Register</span>
-        </p>
+            <div class="form-group">
+                <input type="email" placeholder="Email" [(ngModel)]="userEmail" name="userEmail" />
+            </div>
 
-    </form> -->
+            <div class="form-group">
+                <input type="password" placeholder="Password" [(ngModel)]="userPassword" name="userPassword"/>
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account?
+                <span class="highlighted" (click)="openLogin($event)" >Login</span>
+            </p>
+
+         </form>   
+    }
 
 
-    <!--  Register -->
-    <form>
-        <h2>Register</h2>
-        
-        <div class="form-group">
-            <input type="text" formControlName="username" placeholder="Username" />
-        </div>
-
-        <div class="form-group">
-            <input type="email" formControlName="email" placeholder="Email" />
-        </div>
-
-        <div class="form-group">
-            <input type="password" formContoller="password" placeholder="Password" />
-        </div>
-        <button (click)="onButtonClick()">Register</button>
-        <p>Already have an account?
-            <span class="highlighted">Login</span>
-        </p>
-
-    </form>   
+    
 
 
 
